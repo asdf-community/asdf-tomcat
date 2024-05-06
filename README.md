@@ -1,7 +1,7 @@
-# asdf-tomcat [![Build](https://github.com/mbutov/asdf-tomcat/actions/workflows/build.yml/badge.svg)](https://github.com/mbutov/asdf-tomcat/actions/workflows/build.yml) [![Lint](https://github.com/mbutov/asdf-tomcat/actions/workflows/lint.yml/badge.svg)](https://github.com/mbutov/asdf-tomcat/actions/workflows/lint.yml)
+# asdf-tomcat [![Build](https://github.com/asdf-community/asdf-tomcat/actions/workflows/build.yml/badge.svg)](https://github.com/asdf-community/asdf-tomcat/actions/workflows/build.yml) [![Lint](https://github.com/asdf-community/asdf-tomcat/actions/workflows/lint.yml/badge.svg)](https://github.com/asdf-community/asdf-tomcat/actions/workflows/lint.yml)
 
 
-[tomcat](https://github.com/mbutov/asdf-tomcat) plugin for the [asdf version manager](https://asdf-vm.com).
+[tomcat](https://github.com/asdf-community/asdf-tomcat) plugin for the [asdf version manager](https://asdf-vm.com).
 
 # Contents
 
@@ -22,7 +22,7 @@ Plugin:
 ```shell
 asdf plugin add tomcat
 # or
-asdf plugin add tomcat https://github.com/mbutov/asdf-tomcat.git
+asdf plugin add tomcat https://github.com/asdf-community/asdf-tomcat.git
 ```
 
 tomcat:
@@ -56,7 +56,7 @@ For setting CATALINA_HOME environment variable, add the following line into `~/.
 
 Contributions of any kind welcome! See the [contributing guide](contributing.md).
 
-[Thanks goes to these contributors](https://github.com/mbutov/asdf-tomcat/graphs/contributors)!
+[Thanks goes to these contributors](https://github.com/asdf-community/asdf-tomcat/graphs/contributors)!
 
 # License
 
