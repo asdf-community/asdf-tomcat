@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+current_script_path=${BASH_SOURCE[0]}
+plugin_dir=$(dirname "$(dirname "$current_script_path")")
+
+# shellcheck source=lib/utils.bash
+source "${plugin_dir}/lib/utils.bash"
+
+cat <<EOT
+Apache Tomcat servlet container: https://tomcat.apache.org
+Only catalina.sh is put on PATH, e.g. "catalina.sh run" or "catalina.sh start".
+CATALINA_HOME is set to the selected version when catalina.sh runs.
+EOT

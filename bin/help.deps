@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+current_script_path=${BASH_SOURCE[0]}
+plugin_dir=$(dirname "$(dirname "$current_script_path")")
+
+# shellcheck source=lib/utils.bash
+source "${plugin_dir}/lib/utils.bash"
+
+cat <<EOT
+Java, the version depends on the Tomcat version:
+  Tomcat 11.0 - Java 17 or later
+  Tomcat 10.1 - Java 11 or later
+  Tomcat 9.0  - Java 8 or later
+  Tomcat 8.5  - Java 7 or later
+See https://tomcat.apache.org/whichversion.html
+EOT

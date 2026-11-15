@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+# catalina.sh keeps CATALINA_HOME if it is set, so a value left from another
+# version would start that version: set it for every call.
+export CATALINA_HOME="$ASDF_INSTALL_PATH"

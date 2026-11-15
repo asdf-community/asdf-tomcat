@@ -14,9 +14,18 @@ jobs:
         os:
           - ubuntu-latest
           - macos-latest
+        version:
+          - latest
+          - latest:9
     runs-on: ${{ matrix.os }}
     steps:
+      - name: Set up Java
+        uses: actions/setup-java@v5
+        with:
+          distribution: temurin
+          java-version: 21
       - name: asdf_plugin_test
         uses: asdf-vm/actions/plugin-test@v4
         with:
-          command: test -x $(asdf which catalina.sh)
+          version: ${{ matrix.version }}
+          command: catalina.sh version
