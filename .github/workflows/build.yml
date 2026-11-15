@@ -8,24 +8,34 @@ on:
 
 jobs:
   plugin_test:
-    name: asdf plugin test
+    name: install and run
     strategy:
+      fail-fast: false
       matrix:
         os:
           - ubuntu-latest
           - macos-latest
-        version:
-          - latest
-          - latest:9
+        query:
+          - ""
+          - "9"
     runs-on: ${{ matrix.os }}
     steps:
-      - name: Set up Java
-        uses: actions/setup-java@v5
+      - uses: actions/checkout@v7
+      - uses: actions/setup-java@v5
         with:
           distribution: temurin
           java-version: 21
-      - name: asdf_plugin_test
-        uses: asdf-vm/actions/plugin-test@v4
-        with:
-          version: ${{ matrix.version }}
-          command: catalina.sh version
+      - uses: asdf-vm/actions/setup@v4
+      # Not asdf-vm/actions/plugin-test: "asdf plugin test" of asdf 0.16 and later does not run the test command.
+      - name: Install and run Tomcat
+        env:
+          QUERY: ${{ matrix.query }}
+        run: |
+          plugins="${ASDF_DATA_DIR:-$HOME/.asdf}/plugins"
+          mkdir -p "$plugins"
+          cp -R "$GITHUB_WORKSPACE" "$plugins/tomcat"
+          version=$(asdf latest tomcat "$QUERY")
+          asdf install tomcat "$version"
+          asdf set tomcat "$version"
+          catalina.sh version | tee output.txt
+          grep -q "Apache Tomcat/$version" output.txt
