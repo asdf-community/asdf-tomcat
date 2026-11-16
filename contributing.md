@@ -7,13 +7,21 @@ scripts/lint.bash
 scripts/format.bash
 ```
 
-Testing locally:
+Offline tests (bats, curl is replaced with pages from `tests/fixtures`):
 
 ```shell
-asdf plugin test <plugin-name> <plugin-url> [--asdf-tool-version <version>] [--asdf-plugin-gitref <git-ref>] [test-command*]
-
-asdf plugin test tomcat https://github.com/asdf-community/asdf-tomcat.git "catalina.sh version"
+bats tests
 ```
+
+Testing the real installation:
+
+```shell
+mkdir -p "${ASDF_DATA_DIR:-$HOME/.asdf}/plugins"
+cp -R . "${ASDF_DATA_DIR:-$HOME/.asdf}/plugins/tomcat-dev"
+asdf install tomcat-dev latest
+```
+
+`asdf plugin test` of asdf 0.16 and later does not run a test command, the build runs it itself, see `.github/workflows/build.yml`.
 
 Tests are automatically run in GitHub Actions on push and PR.
 

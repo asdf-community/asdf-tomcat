@@ -8,6 +8,7 @@
 - [Install](#install)
 - [Supported versions](#supported-versions)
 - [CATALINA_HOME](#catalina_home)
+- [Configuration](#configuration)
 - [Upgrading from 1.x](#upgrading-from-1x)
 - [Contributing](#contributing)
 - [License](#license)
@@ -86,6 +87,17 @@ To get the installation directory elsewhere, e.g. for an IDE:
 ```shell
 asdf where tomcat
 ```
+
+# Configuration
+
+| Variable                    | Meaning                                                                                      |
+|-----------------------------|----------------------------------------------------------------------------------------------|
+| `ASDF_TOMCAT_MIRROR`        | Base URL used instead of `https://dlcdn.apache.org/tomcat`, the archive stays the fallback   |
+| `ASDF_TOMCAT_SKIP_CHECKSUM` | Any non-empty value skips checksum verification, e.g. for a mirror without checksums         |
+| `ASDF_TOMCAT_CACHE_TTL`     | Seconds to keep the version list in `${XDG_CACHE_HOME:-~/.cache}/asdf-tomcat`, 3600 by default, `0` disables |
+
+The version list is cached because asdf asks for it on every `asdf latest`, `asdf list all` and `asdf install`,
+and the Apache archive is slow and rate limited. A new Tomcat release shows up within an hour.
 
 # Upgrading from 1.x
 
