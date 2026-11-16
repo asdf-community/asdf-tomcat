@@ -28,7 +28,7 @@ jobs:
       - uses: actions/setup-java@v6
         with:
           distribution: temurin
-          java-version: 21
+          java-version: 25
       - uses: asdf-vm/actions/setup@v4
       # Not asdf-vm/actions/plugin-test: "asdf plugin test" of asdf 0.16 and later does not run the test command.
       - name: Install and run Tomcat
