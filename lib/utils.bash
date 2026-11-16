@@ -57,7 +57,7 @@ list_all_versions() {
 latest_version() {
 	local query="$1"
 	list_all_versions |
-		awk -v query="$query" 'query == "" || $0 == query || index($0, query ".") == 1' |
+		awk -v query="$query" 'query == "" || $0 "" == query "" || index($0, query ".") == 1' |
 		sort_versions | tail -n1
 }
 
