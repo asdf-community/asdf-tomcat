@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.0.1](https://github.com/asdf-community/asdf-tomcat/compare/v2.0.0...v2.0.1) (2026-11-16)
+
+
+### Bug Fixes
+
+* compare versions as strings in latest-stable ([3af9de3](https://github.com/asdf-community/asdf-tomcat/commit/3af9de3b3c6d6876387cb3679a54ba12a412f9d1))
+
 ## [2.0.0](https://github.com/asdf-community/asdf-tomcat/compare/v1.0.1...v2.0.0) (2026-11-15)
 
 
