@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+cat <<EOT
+Apache Tomcat: https://tomcat.apache.org
+Which version (Java requirements): https://tomcat.apache.org/whichversion.html
+Plugin: https://github.com/asdf-community/asdf-tomcat
+EOT
